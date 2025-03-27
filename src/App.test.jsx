@@ -5,8 +5,12 @@ import { describe, it, expect } from 'vitest';
 import '@testing-library/jest-dom/vitest';
 
 describe('Default Load', () => {
-	it('renders default message', () => {
-		render(<App />);
+	render(<App />);
+	it('renders app title', () => {
 		expect(screen.getByText('Student Manager')).toBeInTheDocument();
+	});
+
+	it('renders student list title', () => {
+		expect(screen.getByText(/my students/i)).toBeInTheDocument();
 	});
 });
